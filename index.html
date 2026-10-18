@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f9fc" />
+  <meta name="description" content="Schedule engineering 3 bulan untuk Website Monitoring & Aplikasi Operator PLTD, lengkap dengan bukti pekerjaan, riwayat dan penyimpanan." />
+  <title>PLTD Engineering • Project Schedule</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-icon">P<span>·</span></div><div><strong>PLTD <span>Engineering</span></strong><small>PROJECT CONTROL CENTER</small></div></div>
+      <div class="nav-section-caption">PROJECT WORKSPACE</div>
+      <div class="nav-item active" id="nav-overview"><span class="nav-icon">▦</span> Overview</div>
+      <div class="nav-section-caption">RENCANA ENGINEERING</div>
+      <button class="nav-item nav-button active-plan" data-nav="website"><span class="nav-icon">▤</span> Schedule Website <span class="nav-count" id="websiteSideCount">0</span></button>
+      <button class="nav-item nav-button" data-nav="app"><span class="nav-icon">▣</span> Schedule Aplikasi <span class="nav-count" id="appSideCount">0</span></button>
+      <div class="nav-separator"></div>
+      <button class="nav-item nav-button" id="historyBtn"><span class="nav-icon">◷</span> Riwayat Perubahan</button>
+      <button class="nav-item nav-button" id="settingsBtn"><span class="nav-icon">⚙</span> Pengaturan Proyek</button>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><div class="note-dot"></div><div><strong>Project schedule</strong><span>3 bulan · Website + Aplikasi</span></div></div>
+        <div class="sidebar-footer">Engineering planning workspace<br/>Made for PLTD project</div>
+      </div>
+    </aside>
+    <div class="main-col">
+      <header class="topbar">
+        <div class="mobilebrand"><button class="icon-button" id="mobileMenuBtn" title="Menu">☰</button><strong>PLTD Engineering</strong></div>
+        <div class="breadcrumbs"><span>Workspace</span><span class="breadcrumb-chevron">/</span><strong>Engineering Schedule</strong></div>
+        <div class="top-actions"><div class="sync-pill" id="syncPill"><span class="sync-dot"></span><span id="syncText">Mode Tamu</span></div><button class="btn btn-light" id="refreshBtn" title="Muat jadwal terbaru">↻ <span class="refresh-label">Muat Terbaru</span></button><span id="roleChip" class="role-chip guest">◉ Tamu</span><button class="btn btn-light top-save" id="saveBtn"><span>◫</span> Simpan Jadwal</button><button class="btn btn-light" id="backupBtn"><span>↓</span> Backup Data</button><button class="btn btn-primary" id="authBtn">Masuk Admin</button></div>
+      </header>
+      <main class="content">
+        <div class="hero-head"><div><div class="eyebrow"><span class="eyebrow-line"></span> PROJECT ENGINEERING PLAN</div><h1>Schedule Pengembangan <span>Software</span></h1><p>Monitoring pelaksanaan pengembangan sistem PLTD dalam satu dashboard yang sederhana dan terstruktur.</p></div><div class="project-period"><div class="period-label">PERIODE PENGERJAAN</div><strong id="periodRange">19 Okt 2026 — 18 Jan 2027</strong><small><span class="period-dot"></span> Target 3 bulan kalender</small></div></div>
+        <section class="metric-grid" aria-label="Ringkasan proyek">
+          <div class="metric-card"><div class="metric-heading">Total aktivitas <span class="metric-icon tone-indigo">▦</span></div><div class="metric-value" id="statTotal">0</div><div class="metric-sub">2 workstream engineering</div></div>
+          <div class="metric-card"><div class="metric-heading">Progress keseluruhan <span class="metric-icon tone-blue">◴</span></div><div class="metric-value"><span id="statProgress">0</span><small>%</small></div><div class="mini-progress"><span id="overallProgressBar"></span></div></div>
+          <div class="metric-card"><div class="metric-heading">Pekerjaan selesai <span class="metric-icon tone-green">✓</span></div><div class="metric-value" id="statDone">0</div><div class="metric-sub">Status completed</div></div>
+          <div class="metric-card"><div class="metric-heading">Butuh perhatian <span class="metric-icon tone-orange">!</span></div><div class="metric-value" id="statBlocked">0</div><div class="metric-sub">Terlambat / terhambat</div></div>
+        </section>
+        <section class="workspace-card">
+          <div class="section-top"><div><h2>Rencana Kerja Engineering</h2><p id="workspaceHint">Mode Tamu: lihat jadwal dan bukti pengerjaan. Masuk sebagai Admin untuk mengubah.</p></div><button class="btn btn-outline" id="addTaskBtn"><span>＋</span> Tambah Aktivitas</button></div>
+          <div class="tab-line"><div class="tabs" role="tablist"><button class="tab active" data-tab="website" role="tab" aria-selected="true"><span class="tab-glyph">▤</span> Schedule Website <span class="tab-counter" id="webTabCount">0</span></button><button class="tab" data-tab="app" role="tab" aria-selected="false"><span class="tab-glyph">▣</span> Schedule Aplikasi <span class="tab-counter" id="appTabCount">0</span></button></div><div class="view-switch" aria-label="Tampilan"><button class="view-btn active" data-view="table">☷ <span>Daftar</span></button><button class="view-btn" data-view="gantt">▥ <span>Gantt</span></button></div></div>
+          <div class="workstream-summary"><div class="ws-mark" id="wsMark">W</div><div class="ws-description"><strong id="wsTitle">Pengembangan Website Monitoring</strong><span id="wsDesc">Dashboard supervisor, admin dan superadmin</span></div><div class="ws-progress"><div><span>Progress workstream</span><strong id="wsPercent">0%</strong></div><div class="progress-track"><i id="wsBar"></i></div></div></div>
+          <div class="toolbar"><div class="search-field"><span>⌕</span><input type="search" id="searchInput" placeholder="Cari aktivitas atau PIC..." autocomplete="off" /></div><div class="toolbar-right"><label for="statusFilter">Status</label><select id="statusFilter"><option value="all">Semua status</option><option value="Belum Mulai">Belum Mulai</option><option value="Dikerjakan">Dikerjakan</option><option value="Review">Review</option><option value="Terhambat">Terhambat</option><option value="Selesai">Selesai</option></select><span id="countVisible" class="visible-count"></span></div></div>
+          <div id="taskArea"><!-- generated --></div>
+          <div class="table-footer"><span id="footerCount">0 aktivitas</span><span id="footerHint">Klik pekerjaan untuk melihat rincian dan bukti.</span></div>
+        </section>
+        <div class="bottom-panels"><section class="info-panel"><div class="panel-heading"><h3>Milestone 3 Bulan</h3><span class="small-tag">TARGET PROJECT</span></div><div class="milestones" id="milestoneList"></div></section><section class="info-panel"><div class="panel-heading"><h3>Aktivitas Terbaru</h3><button class="text-button" id="openHistoryLink">Lihat semua →</button></div><div class="recent-feed" id="recentList"></div></section></div>
+        <div class="site-footer">PLTD Engineering Schedule <span>•</span> Akses Tamu (baca saja) + Admin (login aman) <span>•</span> v2.0</div>
+      </main>
+    </div>
+  </div>
+  <div class="mobile-overlay hidden" id="mobileOverlay"></div>
+  <div class="drawer-overlay hidden" id="drawerOverlay"></div>
+  <aside class="task-drawer" id="taskDrawer" aria-hidden="true" aria-label="Edit aktivitas"><div class="drawer-header"><div><div class="eyebrow">DETAIL AKTIVITAS</div><h2 id="drawerTitle">Detail Schedule</h2></div><button class="close-btn" id="drawerClose" aria-label="Tutup">×</button></div><div class="drawer-scroller"><div id="drawerReadOnly" class="read-only-note hidden">Mode Tamu · Hanya lihat. Masuk Admin untuk mengubah pekerjaan dan upload bukti.</div><form id="taskForm"><div class="form-group"><label for="fTitle">Nama pekerjaan <em>*</em></label><input type="text" id="fTitle" maxlength="140" required placeholder="Contoh: Pengembangan dashboard" /></div><div class="form-group"><label for="fDesc">Deskripsi / output pekerjaan</label><textarea id="fDesc" rows="3" maxlength="1000" placeholder="Keluaran dan kriteria pekerjaan..."></textarea></div><div class="form-grid"><div class="form-group"><label for="fStart">Tanggal mulai <em>*</em></label><input type="date" id="fStart" required /></div><div class="form-group"><label for="fEnd">Tanggal selesai <em>*</em></label><input type="date" id="fEnd" required /></div></div><div class="form-grid"><div class="form-group"><label for="fStatus">Status pekerjaan</label><select id="fStatus"><option>Belum Mulai</option><option>Dikerjakan</option><option>Review</option><option>Terhambat</option><option>Selesai</option></select></div><div class="form-group"><label for="fOwner">PIC / Penanggung jawab</label><input type="text" id="fOwner" maxlength="70" placeholder="Contoh: Backend Engineer" /></div></div><div class="form-group"><div class="label-between"><label for="fProgress">Progres pekerjaan</label><strong id="progressLabel">0%</strong></div><input type="range" min="0" max="100" step="5" id="fProgress" value="0" /><div class="range-labels"><span>0%</span><span>50%</span><span>100%</span></div></div><div class="form-group"><label for="fNotes">Catatan pelaksanaan</label><textarea id="fNotes" rows="3" maxlength="1500" placeholder="Hambatan, hasil diskusi, next action..."></textarea></div><div class="form-group"><label for="fPhase">Tahap pekerjaan</label><select id="fPhase"><option>Analisis</option><option>Desain</option><option>Development</option><option>Integrasi</option><option>Testing</option><option>Deployment</option></select></div><div class="drawer-divider"></div><div class="attachment-heading"><div><h3>Bukti Pengerjaan <span id="evidenceCount">(0)</span></h3><p>Upload foto, PDF, screenshot, atau dokumen.</p></div></div><label class="upload-zone" id="uploadZone"><input type="file" id="evidenceInput" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt,.zip" /><span class="upload-icon">↥</span><strong>Klik untuk upload bukti</strong><small>Maksimal 15 MB per file • Upload setelah aktivitas disimpan</small></label><div id="evidenceList" class="evidence-list"></div><div class="drawer-divider"></div><div class="attachment-heading"><div><h3>Riwayat pekerjaan</h3><p>Perubahan status, tanggal, dan bukti terekam.</p></div></div><div class="drawer-history" id="drawerHistory"></div></form></div><div class="drawer-actions"><button class="btn btn-danger-text" id="deleteTaskBtn">Hapus</button><div class="drawer-save-actions"><button class="btn btn-light" id="cancelTaskBtn">Batal</button><button class="btn btn-primary" form="taskForm" type="submit" id="submitTaskBtn">Simpan Perubahan</button></div></div></aside>
+  <div class="modal-overlay hidden" id="modalOverlay" role="presentation"><div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-header"><div><div class="eyebrow">PROJECT SETTINGS</div><h2 id="modalTitle">Pengaturan Proyek</h2></div><button class="close-btn" id="modalClose" aria-label="Tutup">×</button></div><div class="modal-content" id="modalContent"></div></div></div>
+  <div class="toast-area" id="toastArea" role="status" aria-live="polite"></div>
+  <input type="file" accept="application/json,.json" id="importFile" class="hidden" />
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
